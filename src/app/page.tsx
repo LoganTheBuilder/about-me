@@ -13,7 +13,7 @@ const experience = [
   {
     role: "Advisor",
     company: "tangible.pm",
-    period: "2022 — Present",
+    period: "2023 — Present",
     description:
       "Expert on B2B SaaS product growth. Providing holistic product expertise to B2B organizations, establishing product frameworks, and mentoring product orgs.",
   },
@@ -121,98 +121,203 @@ const projects = [
 
 export default function Home() {
   return (
-    <main className="max-w-2xl mx-auto px-6 py-20 space-y-16">
+    <main className="max-w-2xl mx-auto px-6 py-20 space-y-12 font-sans">
       {/* Hero */}
-      <section className="space-y-4">
-        <h1 className="text-zinc-100 tracking-tight flex items-center gap-3 text-xl">
-          <CircleUserRound size={28} strokeWidth={0.75} />
-          Logan Clark
-        </h1>
-        {/* Top-level info */}
-        <div>
-          <h2 className="text-zinc-400 mt-1 flex items-center gap-1.5 text-m">
-            <FingerprintIcon size={14} />
-            Product Guy
-          </h2>
-          <p className="text-zinc-400 mt-1 flex items-center gap-1.5 text-m">
-            <MapPin size={14} />
-            Pennsylvania, USA
-          </p>
-        </div>
-        {/* Contact info */}
-        <div className="flex gap-4 pt-1">
-          {/* Email */}
-          <a href="mailto:hi@logan.pm"
-            className="text-zinc-400 hover:text-zinc-100 transition-colors"
-            aria-label="Email"
-          >            <p>Email</p>
-          </a>
-          {/* GitHub */}
-          <a href="https://github.com/LoganTheBuilder"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-400 hover:text-zinc-100 transition-colors"
-            aria-label="GitHub"
-          ><p>GitHub</p>
-          </a>
-          {/* Linkedin */}
-          <a href="https://linkedin.com/in/logan-d-clark"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-400 hover:text-zinc-100 transition-colors"
-            aria-label="LinkedIn"
-          ><p>Linkedin</p>
-          </a>
+      <section className="space-y-4 uppercase">
+        {/* Title Area */}
+        <div className="flex items-center space-x-[-16px] font-mono tracking-wide">
+          <span className="relative z-10 flex items-center" style={{ height: "60px" }}>
+            <span
+              className="inline-flex items-center justify-center w-16 h-16 text-white rounded-full border"
+              style={{
+                zIndex: 20,
+                borderWidth: "6px",
+                borderColor: "#09090b", // zinc-950, matches default bg for Tailwind dark
+                background: "linear-gradient(to bottom left, #f6339a, #d946ef)",           
+              }}
+            >
+              <img
+                src="/img/LoganPM.png"
+                alt="Logan Clark avatar"
+                className="w-12 h-12 rounded-full object-cover"
+                style={{ display: "block" }}
+              />
+        
+            </span>
+          </span>
+          <span
+            className="relative z-0 flex items-center"
+            style={{
+              height: "60px",
+              marginRight: "-20px",    // negative margin to overlap next item
+              zIndex: 5,               // make below avatar, above next      
+              order: 1                 // keep original order
+            }}
+          >
+            <span
+              className="inline-flex items-center px-6 py-2 text-white font-bold text-xl"         
+              style={{
+                zIndex: 30,
+                height: "60px",
+                borderWidth: "4px",
+                borderColor: "#09090b",
+                background: "linear-gradient(to bottom left, #f6339a, #d946ef)",
+                borderTopLeftRadius: 0,
+                borderBottomLeftRadius: 0,
+                borderTopRightRadius: "9999px",
+                borderBottomRightRadius: "9999px",
+              }}
+            >
+                Logan Clark
+            </span>
+          </span>
+          <span
+            className="relative z-0 flex items-center"
+            style={{
+              height: "60px",
+              marginLeft: "0px",        // keep at 0px to nest pills
+              zIndex: 0,                // stack below "Logan Clark"
+              order: 2                  // position after "Logan Clark"
+            }}
+          >
+            <span
+              className="inline-flex items-center px-8 py-2 text-black font-bold text-xl"
+              style={{
+                zIndex: 20,
+                height: "60px",
+                borderWidth: "4px",
+                borderColor: "#09090b",
+                background: "linear-gradient(to bottom left, #f6339a, #d946ef)",
+                borderTopLeftRadius: 0,
+                borderBottomLeftRadius: 0,
+                borderTopRightRadius: "9999px",
+                borderBottomRightRadius: "9999px",
+                marginLeft: "-30px", // negative margin to tuck under "Logan Clark"
+                paddingLeft: "60px", // compensate to keep text visually in same spot           
+                marginRight: "-20px", // overlap next pill to the right
+                paddingRight: "30px", // maintain pill feel, allow overlap
+              }}
+            >
+              Product Guy
+            </span>
+          </span>
+          <span
+            className="relative z-0 flex items-center"
+            style={{
+              height: "60px",
+              marginLeft: "0px",        // keep flush, stacking is handled by negative margin above
+              zIndex: -1,               // stack below "Product Guy"
+              order: 3                  // position after "Product Guy"
+            }}
+          >
+            <span
+              className="inline-flex items-center px-8 py-2 text-black font-bold text-xl"
+              style={{
+                zIndex: 10,
+                height: "60px",
+                borderWidth: "4px",
+                borderColor: "#09090b",
+                background: "linear-gradient(to bottom left, #f6339a, #d946ef)",
+                borderTopLeftRadius: 0,
+                borderBottomLeftRadius: 0,
+                borderTopRightRadius: "9999px",
+                borderBottomRightRadius: "9999px",
+                marginLeft: "-30px", // negative margin to allow overlap with previous pill
+                paddingLeft: "60px", // visually balance pill text separation
+              }}
+            >
+              PA, USA
+            </span>
+          </span>
         </div>
       </section>
-
-      {/* About */}
+ 
+    {/* About */}
       <section id="about" className="space-y-4">
-        <h2 className="flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-zinc-400">
-          <MessageCircleQuestion size={16} />
+        <h2 className="flex items-center gap-3 text-m font-mono font-semibold uppercase tracking-wide text-zinc-400">
+          <MessageCircleQuestion size={20} />
           You're here because...
         </h2>
-          <div className="grid grid-cols-[110px_1fr]">
-            <span className="text-s tracking-wide text-zinc-500 font-light italic">Most likely,</span>
-            <span>I sent this to you, or you're here from LinkedIn,</span>
-          </div>
+        <div className="grid grid-cols-[60px_1fr]">
+          <span className="text-s tracking-wide text-zinc-500 font-light italic"></span>
+          <span>I sent this to you, or you're here from LinkedIn,</span>
+        </div>
 
-          <div className="grid grid-cols-[110px_1fr]">
-            <span className="text-s tracking-wide text-zinc-500 font-light italic">and</span>
-            <span>You're looking for a <b>product leader</b>,</span>
-          </div>
+        <div className="grid grid-cols-[60px_1fr]">
+          <span className="text-s tracking-wide text-zinc-500 font-light italic">and</span>
+          <span>You're looking for a <b>product leader</b>,</span>
+        </div>
 
-          <div className="grid grid-cols-[110px_1fr]">
-            <span className="text-s tracking-wide  text-zinc-500 font-light italic">and</span>
-            <span>You want to work with someone with a <b>sense of humor</b>,</span>
-          </div>
+        <div className="grid grid-cols-[60px_1fr]">
+          <span className="text-s tracking-wide  text-zinc-500 font-light italic">and</span>
+          <span>You want to work with someone with a <b>sense of humor</b>,</span>
+        </div>
 
-          <div className="grid grid-cols-[110px_1fr]">
-            <span className="text-s tracking-wide  text-zinc-500 font-light italic">and</span>
-            <span>You need to work with someone who can work with <b>everyone</b></span>
-          </div>
+        <div className="grid grid-cols-[60px_1fr]">
+          <span className="text-s tracking-wide  text-zinc-500 font-light italic">and</span>
+          <span>You need to work with someone who can work with <b>everyone</b>.</span>
+        </div>
 
-          <div className="grid grid-cols-[110px_1fr]">
-            <span className="text-s tracking-wide  text-zinc-500 font-light italic">or</span>
-            <span>You found this website by accident.</span>
-          </div>
+        <div className="grid grid-cols-[60px_1fr]">
+          <span className="text-s tracking-wide  text-zinc-500 font-light italic">or</span>
+          <span className="text-s tracking-wide  text-zinc-500 font-light italic">
+            You found this website by accident.</span>
+        </div>
 
-          <div className="text-lg space-y-4 mb-2">
-              <p>That means there's an <b>83% chance you're here for a good reason</b>.</p>
-              <p>Let's make it 100%.</p>
-          </div>
+        <div className="text-m space-y-3">
+            <p>That means there's an <b>83% chance you're here for a good reason</b>.</p>
+            <p>Let's make it <b>100%</b>.</p>
+        </div>
       </section>
-
+   {/* Contact Bar */}
+      <div
+        className="flex items-center rounded-3xl bg-gradient-to-bl p-3 pl-6 shadow-md outline outline-black/5"
+        style={{
+          boxShadow: "0 2px 3px 0 rgb(255 255 255 / 0.45)",
+          background: "linear-gradient(to bottom left, #f6339a, #d946ef)"
+        }}
+      >
+        <div className="flex gap-6">
+          {/* Email */}
+          <a
+            href="mailto:hi@logan.pm"
+            className="text-black hover:text-zinc-100 transition-colors font-semibold"
+            aria-label="Email"
+          >
+            <p className="font-semibold">Email</p>
+          </a>
+          {/* GitHub */}
+          <a
+            href="https://github.com/LoganTheBuilder"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black hover:text-zinc-100 transition-colors font-semibold"
+            aria-label="GitHub"
+          >
+            <p className="font-semibold">GitHub</p>
+          </a>
+          {/* Linkedin */}
+          <a
+            href="https://linkedin.com/in/logan-d-clark"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black hover:text-zinc-100 transition-colors font-semibold"
+            aria-label="LinkedIn"
+          >
+            <p className="font-semibold">Linkedin</p>
+          </a>
+        </div>
+      </div>
       {/* Experience */}
       <section id="experience" className="space-y-6">
-        <h2 className="flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-zinc-400">
-          <Briefcase size={16} />
-          10 Years of Product-Specific Experience
+        <h2 className="flex items-center font-mono gap-3 text-m font-semibold uppercase tracking-wide text-zinc-400">
+          <Briefcase size={20} />
+          10 Years of Product Experience
         </h2>
         <ol className="space-y-8">
           {experience.map((job) => (
             <li key={job.company} className="relative pl-4 border-l border-zinc-800">
-              <p className="text-lg font-medium text-zinc-100">{job.role}</p>
+              <p className="text-m font-medium text-zinc-100">{job.role}</p>
               <p className="text-sm text-zinc-400 mt-0.5 flex items-center gap-3">
                 {job.company}
                 <span className="flex items-center gap-3 text-sm">
@@ -230,8 +335,8 @@ export default function Home() {
 
       {/* Noteworthy Projects */}
       <section id="projects" className="space-y-6">
-        <h2 className="flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-zinc-400">
-          <FolderGit2 size={16} />
+        <h2 className="flex items-center font-mono gap-3 text-m font-semibold uppercase tracking-wide text-zinc-400">
+          <FolderGit2 size={20} />
           Projects
         </h2>
         <ul className="space-y-4">
