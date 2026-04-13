@@ -80,7 +80,7 @@ const projects = [
     description:
       "Lightweight, open-source communal table editing app. Built by me to scratch my own itch (I use tables for everything).",
     tags: ["Next.js", "Node", "Prisma", "Vercel", "Neon", "BetterAuth", "Open Source"],
-    href: "https://tables.logan.pm",
+    href: "https://tablebees.com",
   },
   {
     name: "AI-powered, Industry-specific Analytics Platform",
